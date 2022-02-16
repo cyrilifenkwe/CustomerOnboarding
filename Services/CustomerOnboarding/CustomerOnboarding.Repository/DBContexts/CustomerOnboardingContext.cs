@@ -10,6 +10,8 @@ namespace CustomerOnboarding.Repository.DbContexts
             : base(option)
         {
         }
+
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<State> States { get; set; }
         public DbSet<LocalGovenmentArea> LocalGovernmentAreas { get; set; }
         public DbSet<OnboardingStatus> OnboardingStatus { get; set; }
