@@ -20,6 +20,7 @@ namespace CustomerOnboarding.ApplicationService.ExtentionMethods
             services.AddTransient<IStateAppService, StateAppService>();
             services.AddTransient<ILgaAppService, LgaAppService>();
             services.AddTransient<IOnboardingStatusAppService, OnboardingStatusAppService>();
+            services.AddTransient<IBankAppService, BankAppService>();
             return services;
         }
     }

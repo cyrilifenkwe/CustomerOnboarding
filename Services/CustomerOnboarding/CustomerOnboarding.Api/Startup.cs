@@ -55,8 +55,7 @@ namespace CustomerOnboarding.Api
             using (var csv = new CsvReader(reader))
             {
                 object p = csv.Configuration.RegisterClassMap<StateCsvMap>();
-                statesRecords = csv.GetRecords<State>().ToList();
-                statesRecords.OrderBy(x => x.Name);
+                statesRecords = csv.GetRecords<State>().OrderBy(x => x.Name).ToList();
             }
 
             var lgaFile = Path.Combine(_hostEnvironment.ContentRootPath, "Files\\lga.csv");
@@ -64,8 +63,7 @@ namespace CustomerOnboarding.Api
             using (var csv = new CsvReader(reader))
             {
                 object p = csv.Configuration.RegisterClassMap<LgaCsvMap>();
-                lgaRecords = csv.GetRecords<LgaDto>().ToList();
-                lgaRecords.OrderBy(x => x.Lga);
+                lgaRecords = csv.GetRecords<LgaDto>().OrderBy(x => x.Lga).ToList();
             }
 
             services.AddAutoMapper(typeof(Startup));
