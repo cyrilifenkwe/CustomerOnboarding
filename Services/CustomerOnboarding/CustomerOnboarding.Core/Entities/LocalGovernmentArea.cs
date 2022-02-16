@@ -1,8 +1,8 @@
 ﻿namespace CustomerOnboarding.Core.Entities
 {
-    public class LocalGovenmentArea : Entity
+    public class LocalGovernmentArea : Entity
     {
         public string Lga { get; set; }
-        public int StateId { get; set; }
+        public long StateId { get; set; }
     }
 }

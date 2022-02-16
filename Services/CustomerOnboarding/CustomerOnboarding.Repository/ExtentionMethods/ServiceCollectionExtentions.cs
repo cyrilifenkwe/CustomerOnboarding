@@ -1,4 +1,6 @@
-﻿using CustomerOnboarding.Repository.DbContexts;
+﻿using CustomerOnboarding.Repositories.Repositories;
+using CustomerOnboarding.Repositories.Repository;
+using CustomerOnboarding.Repository.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +19,7 @@ namespace CustomerOnboarding.Repository.ExtentionMethods
         {
             services.AddDbContext<CustomerOnboardingContext>(options =>            
             options.UseSqlServer(configuration["CustomerOnboardingConnectionString"])) ;
-
+            services.AddTransient(typeof(IRepository<>),typeof(Repository<>));
 
             return services;
         }

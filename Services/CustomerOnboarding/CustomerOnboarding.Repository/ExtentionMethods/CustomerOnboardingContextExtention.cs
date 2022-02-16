@@ -33,11 +33,11 @@ namespace CustomerOnboarding.Repository.ExtentionMethods
                     } 
                 }
 
-                List<LocalGovenmentArea> allLgas = new List<LocalGovenmentArea>();
+                List<LocalGovernmentArea> allLgas = new List<LocalGovernmentArea>();
                 foreach (var lga in lgas)
                 {
                     allLgas.Add(
-                        new LocalGovenmentArea
+                        new LocalGovernmentArea
                         {
                             StateId = lga.StateCode,
                             Lga = lga.Lga
@@ -52,6 +52,17 @@ namespace CustomerOnboarding.Repository.ExtentionMethods
                                 new OnboardingStatus { Description = "Completed" }) ;
             }
 
+            if (!context.Customers.Any())
+            {
+                context.Add(new Customer
+                { 
+                    PhoneNumber ="07037808286",
+                    DateOnboarded = DateTime.Now,
+                    OnboardingStatusId = 2,
+                    Email = "cyrilifenkwe@gmail.com",
+                    Password = "Passw0r@1Test"
+                });
+            }
             context.SaveChanges();
         }
     }
