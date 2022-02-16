@@ -15,23 +15,23 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
     {
         private readonly IOtpService _otpService;
         private readonly IRepository<Customer> _customerRepository;
-        private readonly IRepository<OnboardingStatus> _OnboardingStatusFromDb;
-        private readonly IRepository<LocalGovenmentArea> _lga;
-        private readonly IRepository<State> state;
+        private readonly IRepository<OnboardingStatus> _OnboardingStatusRepository;
+        private readonly IRepository<LocalGovernmentArea> _lgaRepository;
+        private readonly IRepository<State> _stateRepository;
         private readonly IPasswordHasher _passwordHasher;
 
         public OnboardCustomerAppService(IOtpService otpService,
             IRepository<Customer> customerRepository,
-            IRepository<OnboardingStatus> OnboardingStatusFromDb,
-            IRepository<LocalGovenmentArea> lga,
-            IRepository<State> state,
+            IRepository<OnboardingStatus> OnboardingStatusRepository,
+            IRepository<LocalGovernmentArea> lgaRepository,
+            IRepository<State> stateRepository,
             IPasswordHasher passwordHasher)
         {
             _otpService = otpService;
             _customerRepository = customerRepository;
-            _OnboardingStatusFromDb = OnboardingStatusFromDb;
-            _lga = lga;
-            this.state = state;
+            _OnboardingStatusRepository = OnboardingStatusRepository;
+            _lgaRepository = lgaRepository;
+            _stateRepository = stateRepository;
             _passwordHasher = passwordHasher;
         }
         public bool OnboardCustomer(CustomerDto customer) 
@@ -39,11 +39,11 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             var otpSent = _otpService.SendOTP(customer.PhoneNumber);
             var otpVerified = _otpService.VerifiedOTP(customer.PhoneNumber);
 
-            var stateId = state.GetAll()
+            var stateId = _stateRepository.GetAll()
                 .FirstOrDefault(s => s.Name == 
                 customer.StateOfResidence).Id;
 
-            var lgaMappedToState = _lga.GetAll().Where(x => x.Lga == 
+            var lgaMappedToState = _lgaRepository.GetAll().Where(x => x.Lga == 
                             customer.LGA && x.StateId == stateId).Any();
 
             if (otpSent && otpVerified && lgaMappedToState)
@@ -74,11 +74,19 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             }
         }
 
+        public IEnumerable<Customer> GetAllOnboardedCustomers()
+        {
+            var onboardingStatusId = GetOnboardingStatusId("Completed");
+            var allOnboardedCustomers = _customerRepository.GetAll()
+                    .Where(x => x.OnboardingStatusId == onboardingStatusId);
+
+            return allOnboardedCustomers;
+        }
         private long GetOnboardingStatusId(string statusDescription)
         {
             long newOnboardingStatusId = 0;
             long pendingOnboardingStatusId = 0;
-            var allOnboardingStatus = _OnboardingStatusFromDb.GetAll();
+            var allOnboardingStatus = _OnboardingStatusRepository.GetAll();
 
             foreach (var status in allOnboardingStatus)
             {
@@ -93,6 +101,35 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             }
 
             return newOnboardingStatusId == 0 ? pendingOnboardingStatusId : newOnboardingStatusId;
+        }
+
+        public Customer GetOnboardedCustomerById(long customerId)
+        {
+            return _customerRepository.Get(customerId);
+        }
+
+        public bool UpdateOnboardedCustomer(Customer customerToUpdate)
+        {
+            _customerRepository.Update(customerToUpdate);
+            return true;
+        }
+
+        public bool DeleteOnboardedCustomer(Customer customerToDelete)
+        {
+            _customerRepository.Update(customerToDelete);
+            return true;
+        }
+
+        public Customer GetOnboardedCustomerByEmail(string customerEmail)
+        {
+           return  _customerRepository.GetAll()
+                .FirstOrDefault(x => x.Email == customerEmail);
+        }
+
+        public Customer GetOnboardedCustomerByPhoneNumber(string customerPhoneNumber)
+        {
+            return _customerRepository.GetAll()
+                .FirstOrDefault(x => x.PhoneNumber == customerPhoneNumber);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace CustomerOnboarding.Core.Dto
     public class LgaDto
     {
         public string Lga { get; set; }
-        public int StateCode { get; set; }
+        public long StateCode { get; set; }
         public string StateName { get; set; }
     }
 }

@@ -1,9 +1,11 @@
 using CsvHelper;
 using CustomerOnboarding.Api.Mappers;
+using CustomerOnboarding.ApplicationService.ExtentionMethods;
 using CustomerOnboarding.Core.Dto;
 using CustomerOnboarding.Core.Entities;
 using CustomerOnboarding.Repository.DbContexts;
 using CustomerOnboarding.Repository.ExtentionMethods;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -66,6 +68,9 @@ namespace CustomerOnboarding.Api
                 lgaRecords.OrderBy(x => x.Lga);
             }
 
+            services.AddAutoMapper(typeof(Startup));
+            services.AddFluentValidation();
+            services.AddCustomerOnboardingApplicationService();
             services.AddCustomerOnboardingRepositoryServices(Configuration);
         }
 
