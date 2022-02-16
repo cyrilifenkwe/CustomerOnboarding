@@ -1,0 +1,775 @@
+Local Government Area,StateCode,StateName
+Abadam,8,Borno State
+Abaji,15,FCT
+Abak,3,Akwa Ibom State
+Abakaliki,11,Ebonyi State
+Aba North,1,Abia State
+Aba South,1,Abia State
+Abeokuta North,28,Ogun State
+Abeokuta South,28,Ogun State
+Abi,9,Cross River State
+Aboh Mbaise,17,Imo State
+Abua/Odual,33,Rivers State
+Adavi,23,Kogi State
+Ado Ekiti,13,Ekiti State
+Ado-Odo/Ota,28,Ogun State
+Afijio,31,Oyo State
+Afikpo North,11,Ebonyi State
+Afikpo South,11,Ebonyi State
+Agaie,27,Niger State
+Agatu,7,Benue State
+Agwara,27,Niger State
+Agege,25,Lagos State
+Aguata,4,Anambra State
+Ahiazu Mbaise,17,Imo State
+Ahoada East,33,Rivers State
+Ahoada West,33,Rivers State
+Ajaokuta,23,Kogi State
+Ajeromi-Ifelodun,25,Lagos State
+Ajingi,20,Kano State
+Akamkpa,9,Cross River State
+Akinyele,31,Oyo State
+Akko,16,Gombe State
+Akoko-Edo,12,Edo State
+Akoko North-East,29,Ondo State
+Akoko North-West,29,Ondo State
+Akoko South-West,29,Ondo State
+Akoko South-East,29,Ondo State
+Akpabuyo,9,Cross River State
+Akuku-Toru,33,Rivers State
+Akure North,29,Ondo State
+Akure South,29,Ondo State
+Akwanga,26,Nasarawa State
+Albasu,20,Kano State
+Aleiro,22,Kebbi State
+Alimosho,25,Lagos State
+Alkaleri,5,Bauchi State
+Amuwo-Odofin,25,Lagos State
+Anambra East,4,Anambra State
+Anambra West,4,Anambra State
+Anaocha,4,Anambra State
+Andoni,33,Rivers State
+Aninri,14,Enugu State
+Aniocha North,10,Delta State
+Aniocha South,10,Delta State
+Anka,37,Zamfara State
+Ankpa,23,Kogi State
+Apa,7,Benue State
+Apapa,25,Lagos State
+Ado,7,Benue State
+Ardo Kola,35,Taraba State
+Arewa Dandi,22,Kebbi State
+Argungu,22,Kebbi State
+Arochukwu,1,Abia State
+Asa,24,Kwara State
+Asari-Toru,33,Rivers State
+Askira/Uba,8,Borno State
+Atakunmosa East,30,Osun State
+Atakunmosa West,30,Osun State
+Atiba,31,Oyo State
+Atisbo,31,Oyo State
+Augie,22,Kebbi State
+Auyo,18,Jigawa State
+Awe,26,Nasarawa State
+Awgu,14,Enugu State
+Awka North,4,Anambra State
+Awka South,4,Anambra State
+Ayamelum,4,Anambra State
+Aiyedaade,30,Osun State
+Aiyedire,30,Osun State
+Babura,18,Jigawa State
+Badagry,25,Lagos State
+Bagudo,22,Kebbi State
+Bagwai,20,Kano State
+Bakassi,9,Cross River State
+Bokkos,32,Plateau State
+Bakori,21,Katsina State
+Bakura,37,Zamfara State
+Balanga,16,Gombe State
+Bali,35,Taraba State
+Bama,8,Borno State
+Bade,36,Yobe State
+Barkin Ladi,32,Plateau State
+Baruten,24,Kwara State
+Bassa,23,Kogi State
+Bassa,32,Plateau State
+Batagarawa,21,Katsina State
+Batsari,21,Katsina State
+Bauchi,5,Bauchi State
+Baure,21,Katsina State
+Bayo,8,Borno State
+Bebeji,20,Kano State
+Bekwarra,9,Cross River State
+Bende,1,Abia State
+Biase,9,Cross River State
+Bichi,20,Kano State
+Bida,27,Niger State
+Billiri,16,Gombe State
+Bindawa,21,Katsina State
+Binji,34,Sokoto State
+Biriniwa,18,Jigawa State
+Birnin Gwari,19,Kaduna State
+Birnin Kebbi,22,Kebbi State
+Birnin Kudu,18,Jigawa State
+Birnin Magaji/Kiyaw,37,Zamfara State
+Biu,8,Borno State
+Bodinga,34,Sokoto State
+Bogoro,5,Bauchi State
+Boki,9,Cross River State
+Boluwaduro,30,Osun State
+Bomadi,10,Delta State
+Bonny,33,Rivers State
+Borgu,27,Niger State
+Boripe,30,Osun State
+Bursari,36,Yobe State
+Bosso,27,Niger State
+Brass,6,Bayelsa State
+Buji,18,Jigawa State
+Bukkuyum,37,Zamfara State
+Buruku,7,Benue State
+Bungudu,37,Zamfara State
+Bunkure,20,Kano State
+Bunza,22,Kebbi State
+Burutu,10,Delta State
+Bwari,15,FCT
+Calabar Municipal,9,Cross River State
+Calabar South,9,Cross River State
+Chanchaga,27,Niger State
+Charanchi,21,Katsina State
+Chibok,8,Borno State
+Chikun,19,Kaduna State
+Dala,20,Kano State
+Damaturu,36,Yobe State
+Damban,5,Bauchi State
+Dambatta,20,Kano State
+Damboa,8,Borno State
+Dandi,22,Kebbi State
+Dandume,21,Katsina State
+Dange Shuni,34,Sokoto State
+Danja,21,Katsina State
+Dan Musa,21,Katsina State
+Darazo,5,Bauchi State
+Dass,5,Bauchi State
+Daura,21,Katsina State
+Dawakin Kudu,20,Kano State
+Dawakin Tofa,20,Kano State
+Degema,33,Rivers State
+Dekina,23,Kogi State
+Demsa,2,Adamawa State
+Dikwa,8,Borno State
+Doguwa,20,Kano State
+Doma,26,Nasarawa State
+Donga,35,Taraba State
+Dukku,16,Gombe State
+Dunukofia,4,Anambra State
+Dutse,18,Jigawa State
+Dutsi,21,Katsina State
+Dutsin Ma,21,Katsina State
+Eastern Obolo,3,Akwa Ibom State
+Ebonyi,11,Ebonyi State
+Edati,27,Niger State
+Ede North,30,Osun State
+Ede South,30,Osun State
+Edu,24,Kwara State
+Ife Central,30,Osun State
+Ife East,30,Osun State
+Ife North,30,Osun State
+Ife South,30,Osun State
+Efon,13,Ekiti State
+Egbado North,28,Ogun State
+Egbado South,28,Ogun State
+Egbeda,31,Oyo State
+Egbedore,30,Osun State
+Egor,12,Edo State
+Ehime Mbano,17,Imo State
+Ejigbo,30,Osun State
+Ekeremor,6,Bayelsa State
+Eket,3,Akwa Ibom State
+Ekiti,24,Kwara State
+Ekiti East,13,Ekiti State
+Ekiti South-West,13,Ekiti State
+Ekiti West,13,Ekiti State
+Ekwusigo,4,Anambra State
+Eleme,33,Rivers State
+Emuoha,33,Rivers State
+Emure,13,Ekiti State
+Enugu East,14,Enugu State
+Enugu North,14,Enugu State
+Enugu South,14,Enugu State
+Epe,25,Lagos State
+Esan Central,12,Edo State
+Esan North-East,12,Edo State
+Esan South-East,12,Edo State
+Esan West,12,Edo State
+Ese Odo,29,Ondo State
+Esit Eket,3,Akwa Ibom State
+Essien Udim,3,Akwa Ibom State
+Etche,33,Rivers State
+Ethiope East,10,Delta State
+Ethiope West,10,Delta State
+Etim Ekpo,3,Akwa Ibom State
+Etinan,3,Akwa Ibom State
+Eti Osa,25,Lagos State
+Etsako Central,12,Edo State
+Etsako East,12,Edo State
+Etsako West,12,Edo State
+Etung,9,Cross River State
+Ewekoro,28,Ogun State
+Ezeagu,14,Enugu State
+Ezinihitte,17,Imo State
+Ezza North,11,Ebonyi State
+Ezza South,11,Ebonyi State
+Fagge,20,Kano State
+Fakai,22,Kebbi State
+Faskari,21,Katsina State
+Fika,36,Yobe State
+Fufure,2,Adamawa State
+Funakaye,16,Gombe State
+Fune,36,Yobe State
+Funtua,21,Katsina State
+Gabasawa,20,Kano State
+Gada,34,Sokoto State
+Gagarawa,18,Jigawa State
+Gamawa,5,Bauchi State
+Ganjuwa,5,Bauchi State
+Ganye,2,Adamawa State
+Garki,18,Jigawa State
+Garko,20,Kano State
+Garun Mallam,20,Kano State
+Gashaka,35,Taraba State
+Gassol,35,Taraba State
+Gaya,20,Kano State
+Gayuk,2,Adamawa State
+Gezawa,20,Kano State
+Gbako,27,Niger State
+Gboko,7,Benue State
+Gbonyin,13,Ekiti State
+Geidam,36,Yobe State
+Giade,5,Bauchi State
+Giwa,19,Kaduna State
+Gokana,33,Rivers State
+Gombe,16,Gombe State
+Gombi,2,Adamawa State
+Goronyo,34,Sokoto State
+Grie,2,Adamawa State
+Gubio,8,Borno State
+Gudu,34,Sokoto State
+Gujba,36,Yobe State
+Gulani,36,Yobe State
+Guma,7,Benue State
+Gumel,18,Jigawa State
+Gummi,37,Zamfara State
+Gurara,27,Niger State
+Guri,18,Jigawa State
+Gusau,37,Zamfara State
+Guzamala,8,Borno State
+Gwadabawa,34,Sokoto State
+Gwagwalada,15,FCT
+Gwale,20,Kano State
+Gwandu,22,Kebbi State
+Gwaram,18,Jigawa State
+Gwarzo,20,Kano State
+Gwer East,7,Benue State
+Gwer West,7,Benue State
+Gwiwa,18,Jigawa State
+Gwoza,8,Borno State
+Hadejia,18,Jigawa State
+Hawul,8,Borno State
+Hong,2,Adamawa State
+Ibadan North,31,Oyo State
+Ibadan North-East,31,Oyo State
+Ibadan North-West,31,Oyo State
+Ibadan South-East,31,Oyo State
+Ibadan South-West,31,Oyo State
+Ibaji,23,Kogi State
+Ibarapa Central,31,Oyo State
+Ibarapa East,31,Oyo State
+Ibarapa North,31,Oyo State
+Ibeju-Lekki,25,Lagos State
+Ibeno,3,Akwa Ibom State
+Ibesikpo Asutan,3,Akwa Ibom State
+Ibi,35,Taraba State
+Ibiono-Ibom,3,Akwa Ibom State
+Idah,23,Kogi State
+Idanre,29,Ondo State
+Ideato North,17,Imo State
+Ideato South,17,Imo State
+Idemili North,4,Anambra State
+Idemili South,4,Anambra State
+Ido,31,Oyo State
+Ido Osi,13,Ekiti State
+Ifako-Ijaiye,25,Lagos State
+Ifedayo,30,Osun State
+Ifedore,29,Ondo State
+Ifelodun,24,Kwara State
+Ifelodun,30,Osun State
+Ifo,28,Ogun State
+Igabi,19,Kaduna State
+Igalamela Odolu,23,Kogi State
+Igbo Etiti,14,Enugu State
+Igbo Eze North,14,Enugu State
+Igbo Eze South,14,Enugu State
+Igueben,12,Edo State
+Ihiala,4,Anambra State
+Ihitte/Uboma,17,Imo State
+Ilaje,29,Ondo State
+Ijebu East,28,Ogun State
+Ijebu North,28,Ogun State
+Ijebu North East,28,Ogun State
+Ijebu Ode,28,Ogun State
+Ijero,13,Ekiti State
+Ijumu,23,Kogi State
+Ika,3,Akwa Ibom State
+Ika North East,10,Delta State
+Ikara,19,Kaduna State
+Ika South,10,Delta State
+Ikeduru,17,Imo State
+Ikeja,25,Lagos State
+Ikenne,28,Ogun State
+Ikere,13,Ekiti State
+Ikole,13,Ekiti State
+Ikom,9,Cross River State
+Ikono,3,Akwa Ibom State
+Ikorodu,25,Lagos State
+Ikot Abasi,3,Akwa Ibom State
+Ikot Ekpene,3,Akwa Ibom State
+Ikpoba Okha,12,Edo State
+Ikwerre,33,Rivers State
+Ikwo,11,Ebonyi State
+Ikwuano,1,Abia State
+Ila,30,Osun State
+Ilejemeje,13,Ekiti State
+Ile Oluji/Okeigbo,29,Ondo State
+Ilesa East,30,Osun State
+Ilesa West,30,Osun State
+Illela,34,Sokoto State
+Ilorin East,24,Kwara State
+Ilorin South,24,Kwara State
+Ilorin West,24,Kwara State
+Imeko Afon,28,Ogun State
+Ingawa,21,Katsina State
+Ini,3,Akwa Ibom State
+Ipokia,28,Ogun State
+Irele,29,Ondo State
+Irepo,31,Oyo State
+Irepodun,24,Kwara State
+Irepodun,30,Osun State
+Irepodun/Ifelodun,13,Ekiti State
+Irewole,30,Osun State
+Isa,34,Sokoto State
+Ise/Orun,13,Ekiti State
+Iseyin,31,Oyo State
+Ishielu,11,Ebonyi State
+Isiala Mbano,17,Imo State
+Isiala Ngwa North,1,Abia State
+Isiala Ngwa South,1,Abia State
+Isin,24,Kwara State
+Isi Uzo,14,Enugu State
+Isokan,30,Osun State
+Isoko North,10,Delta State
+Isoko South,10,Delta State
+Isu,17,Imo State
+Isuikwuato,1,Abia State
+Itas/Gadau,5,Bauchi State
+Itesiwaju,31,Oyo State
+Itu,3,Akwa Ibom State
+Ivo,11,Ebonyi State
+Iwajowa,31,Oyo State
+Iwo,30,Osun State
+Izzi,11,Ebonyi State
+Jaba,19,Kaduna State
+Jada,2,Adamawa State
+Jahun,18,Jigawa State
+Jakusko,36,Yobe State
+Jalingo,35,Taraba State
+Jama'are,5,Bauchi State
+Jega,22,Kebbi State
+Jema'a,19,Kaduna State
+Jere,8,Borno State
+Jibia,21,Katsina State
+Jos East,32,Plateau State
+Jos North,32,Plateau State
+Jos South,32,Plateau State
+Kabba/Bunu,23,Kogi State
+Kabo,20,Kano State
+Kachia,19,Kaduna State
+Kaduna North,19,Kaduna State
+Kaduna South,19,Kaduna State
+Kafin Hausa,18,Jigawa State
+Kafur,21,Katsina State
+Kaga,8,Borno State
+Kagarko,19,Kaduna State
+Kaiama,24,Kwara State
+Kaita,21,Katsina State
+Kajola,31,Oyo State
+Kajuru,19,Kaduna State
+Kala/Balge,8,Borno State
+Kalgo,22,Kebbi State
+Kaltungo,16,Gombe State
+Kanam,32,Plateau State
+Kankara,21,Katsina State
+Kanke,32,Plateau State
+Kankia,21,Katsina State
+Kano Municipal,20,Kano State
+Karasuwa,36,Yobe State
+Karaye,20,Kano State
+Karim Lamido,35,Taraba State
+Karu,26,Nasarawa State
+Katagum,5,Bauchi State
+Katcha,27,Niger State
+Katsina,21,Katsina State
+Katsina-Ala,7,Benue State
+Kaura,19,Kaduna State
+Kaura Namoda,37,Zamfara State
+Kauru,19,Kaduna State
+Kazaure,18,Jigawa State
+Keana,26,Nasarawa State
+Kebbe,34,Sokoto State
+Keffi,26,Nasarawa State
+Khana,33,Rivers State
+Kibiya,20,Kano State
+Kirfi,5,Bauchi State
+Kiri Kasama,18,Jigawa State
+Kiru,20,Kano State
+Kiyawa,18,Jigawa State
+Kogi,23,Kogi State
+Koko/Besse,22,Kebbi State
+Kokona,26,Nasarawa State
+Kolokuma/Opokuma,6,Bayelsa State
+Konduga,8,Borno State
+Konshisha,7,Benue State
+Kontagora,27,Niger State
+Kosofe,25,Lagos State
+Kaugama,18,Jigawa State
+Kubau,19,Kaduna State
+Kudan,19,Kaduna State
+Kuje,15,FCT
+Kukawa,8,Borno State
+Kumbotso,20,Kano State
+Kumi,35,Taraba State
+Kunchi,20,Kano State
+Kura,20,Kano State
+Kurfi,21,Katsina State
+Kusada,21,Katsina State
+Kwali,15,FCT
+Kwande,7,Benue State
+Kwami,16,Gombe State
+Kware,34,Sokoto State
+Kwaya Kusar,8,Borno State
+Lafia,26,Nasarawa State
+Lagelu,31,Oyo State
+Lagos Island,25,Lagos State
+Lagos Mainland,25,Lagos State
+Langtang South,32,Plateau State
+Langtang North,32,Plateau State
+Lapai,27,Niger State
+Lamurde,2,Adamawa State
+Lau,35,Taraba State
+Lavun,27,Niger State
+Lere,19,Kaduna State
+Logo,7,Benue State
+Lokoja,23,Kogi State
+Machina,36,Yobe State
+Madagali,2,Adamawa State
+Madobi,20,Kano State
+Mafa,8,Borno State
+Magama,27,Niger State
+Magumeri,8,Borno State
+Mai'Adua,21,Katsina State
+Maiduguri,8,Borno State
+Maigatari,18,Jigawa State
+Maiha,2,Adamawa State
+Maiyama,22,Kebbi State
+Makarfi,19,Kaduna State
+Makoda,20,Kano State
+Malam Madori,18,Jigawa State
+Malumfashi,21,Katsina State
+Mangu,32,Plateau State
+Mani,21,Katsina State
+Maradun,37,Zamfara State
+Mariga,27,Niger State
+Makurdi,7,Benue State
+Marte,8,Borno State
+Maru,37,Zamfara State
+Mashegu,27,Niger State
+Mashi,21,Katsina State
+Matazu,21,Katsina State
+Mayo Belwa,2,Adamawa State
+Mbaitoli,17,Imo State
+Mbo,3,Akwa Ibom State
+Michika,2,Adamawa State
+Miga,18,Jigawa State
+Mikang,32,Plateau State
+Minjibir,20,Kano State
+Misau,5,Bauchi State
+Moba,13,Ekiti State
+Mobbar,8,Borno State
+Mubi North,2,Adamawa State
+Mubi South,2,Adamawa State
+Mokwa,27,Niger State
+Monguno,8,Borno State
+Mopa Muro,23,Kogi State
+Moro,24,Kwara State
+Moya,27,Niger State
+Mkpat-Enin,3,Akwa Ibom State
+Municipal Area Council,15,FCT
+Musawa,21,Katsina State
+Mushin,25,Lagos State
+Nafada,16,Gombe State
+Nangere,36,Yobe State
+Nasarawa,20,Kano State
+Nasarawa,26,Nasarawa State
+Nasarawa Egon,26,Nasarawa State
+Ndokwa East,10,Delta State
+Ndokwa West,10,Delta State
+Nembe,6,Bayelsa State
+Ngala,8,Borno State
+Nganzai,8,Borno State
+Ngaski,22,Kebbi State
+Ngor Okpala,17,Imo State
+Nguru,36,Yobe State
+Ningi,5,Bauchi State
+Njaba,17,Imo State
+Njikoka,4,Anambra State
+Nkanu East,14,Enugu State
+Nkanu West,14,Enugu State
+Nkwerre,17,Imo State
+Nnewi North,4,Anambra State
+Nnewi South,4,Anambra State
+Nsit-Atai,3,Akwa Ibom State
+Nsit-Ibom,3,Akwa Ibom State
+Nsit-Ubium,3,Akwa Ibom State
+Nsukka,14,Enugu State
+Numan,2,Adamawa State
+Nwangele,17,Imo State
+Obafemi Owode,28,Ogun State
+Obanliku,9,Cross River State
+Obi,7,Benue State
+Obi,26,Nasarawa State
+Obi Ngwa,1,Abia State
+Obio/Akpor,33,Rivers State
+Obokun,30,Osun State
+Obot Akara,3,Akwa Ibom State
+Obowo,17,Imo State
+Obubra,9,Cross River State
+Obudu,9,Cross River State
+Odeda,28,Ogun State
+Odigbo,29,Ondo State
+Odogbolu,28,Ogun State
+Odo Otin,30,Osun State
+Odukpani,9,Cross River State
+Offa,24,Kwara State
+Ofu,23,Kogi State
+Ogba/Egbema/Ndoni,33,Rivers State
+Ogbadibo,7,Benue State
+Ogbaru,4,Anambra State
+Ogbia,6,Bayelsa State
+Ogbomosho North,31,Oyo State
+Ogbomosho South,31,Oyo State
+Ogu/Bolo,33,Rivers State
+Ogoja,9,Cross River State
+Ogo Oluwa,31,Oyo State
+Ogori/Magongo,23,Kogi State
+Ogun Waterside,28,Ogun State
+Oguta,17,Imo State
+Ohafia,1,Abia State
+Ohaji/Egbema,17,Imo State
+Ohaozara,11,Ebonyi State
+Ohaukwu,11,Ebonyi State
+Ohimini,7,Benue State
+Orhionmwon,12,Edo State
+Oji River,14,Enugu State
+Ojo,25,Lagos State
+Oju,7,Benue State
+Okehi,23,Kogi State
+Okene,23,Kogi State
+Oke Ero,24,Kwara State
+Okigwe,17,Imo State
+Okitipupa,29,Ondo State
+Okobo,3,Akwa Ibom State
+Okpe,10,Delta State
+Okrika,33,Rivers State
+Olamaboro,23,Kogi State
+Ola Oluwa,30,Osun State
+Olorunda,30,Osun State
+Olorunsogo,31,Oyo State
+Oluyole,31,Oyo State
+Omala,23,Kogi State
+Omuma,33,Rivers State
+Ona Ara,31,Oyo State
+Ondo East,29,Ondo State
+Ondo West,29,Ondo State
+Onicha,11,Ebonyi State
+Onitsha North,4,Anambra State
+Onitsha South,4,Anambra State
+Onna,3,Akwa Ibom State
+Okpokwu,7,Benue State
+Opobo/Nkoro,33,Rivers State
+Oredo,12,Edo State
+Orelope,31,Oyo State
+Oriade,30,Osun State
+Ori Ire,31,Oyo State
+Orlu,17,Imo State
+Orolu,30,Osun State
+Oron,3,Akwa Ibom State
+Orsu,17,Imo State
+Oru East,17,Imo State
+Oruk Anam,3,Akwa Ibom State
+Orumba North,4,Anambra State
+Orumba South,4,Anambra State
+Oru West,17,Imo State
+Ose,29,Ondo State
+Oshimili North,10,Delta State
+Oshimili South,10,Delta State
+Oshodi-Isolo,25,Lagos State
+Osisioma,1,Abia State
+Osogbo,30,Osun State
+Oturkpo,7,Benue State
+Ovia North-East,12,Edo State
+Ovia South-West,12,Edo State
+Owan East,12,Edo State
+Owan West,12,Edo State
+Owerri Municipal,17,Imo State
+Owerri North,17,Imo State
+Owerri West,17,Imo State
+Owo,29,Ondo State
+Oye,13,Ekiti State
+Oyi,4,Anambra State
+Oyigbo,33,Rivers State
+Oyo,31,Oyo State
+Oyo East,31,Oyo State
+Oyun,24,Kwara State
+Paikoro,27,Niger State
+Pankshin,32,Plateau State
+Patani,10,Delta State
+Pategi,24,Kwara State
+Port Harcourt,33,Rivers State
+Potiskum,36,Yobe State
+Qua'an Pan,32,Plateau State
+Rabah,34,Sokoto State
+Rafi,27,Niger State
+Rano,20,Kano State
+Remo North,28,Ogun State
+Rijau,27,Niger State
+Rimi,21,Katsina State
+Rimin Gado,20,Kano State
+Ringim,18,Jigawa State
+Riyom,32,Plateau State
+Rogo,20,Kano State
+Roni,18,Jigawa State
+Sabon Birni,34,Sokoto State
+Sabon Gari,19,Kaduna State
+Sabuwa,21,Katsina State
+Safana,21,Katsina State
+Sagbama,6,Bayelsa State
+Sakaba,22,Kebbi State
+Saki East,31,Oyo State
+Saki West,31,Oyo State
+Sandamu,21,Katsina State
+Sanga,19,Kaduna State
+Sapele,10,Delta State
+Sardauna,35,Taraba State
+Shagamu,28,Ogun State
+Shagari,34,Sokoto State
+Shanga,22,Kebbi State
+Shani,8,Borno State
+Shanono,20,Kano State
+Shelleng,2,Adamawa State
+Shendam,32,Plateau State
+Shinkafi,37,Zamfara State
+Shira,5,Bauchi State
+Shiroro,27,Niger State
+Shongom,16,Gombe State
+Shomolu,25,Lagos State
+Silame,34,Sokoto State
+Soba,19,Kaduna State
+Sokoto North,34,Sokoto State
+Sokoto South,34,Sokoto State
+Song,2,Adamawa State
+Southern Ijaw,6,Bayelsa State
+Suleja,27,Niger State
+Sule Tankarkar,18,Jigawa State
+Sumaila,20,Kano State
+Suru,22,Kebbi State
+Surulere,31,Oyo State
+Surulere,25,Lagos State
+Tafa,27,Niger State
+Tafawa Balewa,5,Bauchi State
+Tai,33,Rivers State
+Takai,20,Kano State
+Takum,35,Taraba State
+Talata Mafara,37,Zamfara State
+Tambuwal,34,Sokoto State
+Tangaza,34,Sokoto State
+Tarauni,20,Kano State
+Tarka,7,Benue State
+Tarmuwa,36,Yobe State
+Taura,18,Jigawa State
+Toungo,2,Adamawa State
+Tofa,20,Kano State
+Toro,5,Bauchi State
+Toto,26,Nasarawa State
+Chafe,37,Zamfara State
+Tsanyawa,20,Kano State
+Tudun Wada,20,Kano State
+Tureta,34,Sokoto State
+Udenu,14,Enugu State
+Udi,14,Enugu State
+Udu,10,Delta State
+Udung-Uko,3,Akwa Ibom State
+Ughelli North,10,Delta State
+Ughelli South,10,Delta State
+Ugwunagbo,1,Abia State
+Uhunmwonde,12,Edo State
+Ukanafun,3,Akwa Ibom State
+Ukum,7,Benue State
+Ukwa East,1,Abia State
+Ukwa West,1,Abia State
+Ukwuani,10,Delta State
+Umuahia North,1,Abia State
+Umuahia South,1,Abia State
+Umu Nneochi,1,Abia State
+Ungogo,20,Kano State
+Unuimo,17,Imo State
+Uruan,3,Akwa Ibom State
+Urue-Offong/Oruko,3,Akwa Ibom State
+Ushongo,7,Benue State
+Ussa,35,Taraba State
+Uvwie,10,Delta State
+Uyo,3,Akwa Ibom State
+Uzo Uwani,14,Enugu State
+Vandeikya,7,Benue State
+Wamako,34,Sokoto State
+Wamba,26,Nasarawa State
+Warawa,20,Kano State
+Warji,5,Bauchi State
+Warri North,10,Delta State
+Warri South,10,Delta State
+Warri South West,10,Delta State
+Wasagu/Danko,22,Kebbi State
+Wase,32,Plateau State
+Wudil,20,Kano State
+Wukari,35,Taraba State
+Wurno,34,Sokoto State
+Wushishi,27,Niger State
+Yabo,34,Sokoto State
+Yagba East,23,Kogi State
+Yagba West,23,Kogi State
+Yakuur,9,Cross River State
+Yala,9,Cross River State
+Yamaltu/Deba,16,Gombe State
+Yankwashi,18,Jigawa State
+Yauri,22,Kebbi State
+Yenagoa,6,Bayelsa State
+Yola North,2,Adamawa State
+Yola South,2,Adamawa State
+Yorro,35,Taraba State
+Yunusari,36,Yobe State
+Yusufari,36,Yobe State
+Zaki,5,Bauchi State
+Zango,21,Katsina State
+Zangon Kataf,19,Kaduna State
+Zaria,19,Kaduna State
+Zing,35,Taraba State
+Zurmi,37,Zamfara State
+Zuru,22,Kebbi State
