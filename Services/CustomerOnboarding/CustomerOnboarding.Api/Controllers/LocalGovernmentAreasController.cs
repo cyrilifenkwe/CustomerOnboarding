@@ -68,7 +68,7 @@ namespace CustomerOnboarding.Api.Controllers
 
         }
 
-        [HttpGet("{name}")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetByName(string name)
         {
             try
@@ -95,7 +95,7 @@ namespace CustomerOnboarding.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] LgasDto lgaToAdd)
+        public async Task<IActionResult> Post([FromBody] AddLgaDto lgaToAdd)
         {
             try
             {
@@ -109,12 +109,18 @@ namespace CustomerOnboarding.Api.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(long id)
+        [HttpPut()]
+        public async Task<IActionResult> Put([FromBody] UpdateLgaDto lgaToUpdate)
         {
             try
             {
-                return Ok(await _lgaAppService.UpdatLga(id));
+                var isLgaUpdated = await _lgaAppService.UpdatLga(lgaToUpdate);
+
+                if(isLgaUpdated) 
+                { 
+                    return Ok("Local government area has been updated successfully"); 
+                }
+                return StatusCode(500,"Failed to update local government area");
             }
             catch (Exception ex)
             {
@@ -129,7 +135,14 @@ namespace CustomerOnboarding.Api.Controllers
         {
             try
             {
-                return Ok(await _lgaAppService.DeleteLga(id));
+                var isDeleted = await _lgaAppService.DeleteLga(id);
+
+                if (isDeleted)
+                {
+                    return Ok($"Local government area with id {id} has been deleted successfully");
+                }
+
+                return StatusCode(500, "Failed to delete");
             }
             catch (Exception ex)
             {

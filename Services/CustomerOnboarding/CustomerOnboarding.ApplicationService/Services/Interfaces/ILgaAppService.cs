@@ -15,7 +15,7 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
         Task<LgasDto> GetLgaByLgaName(string lgaName);
         Task<IEnumerable<LgasDto>> GetAllLgas();
         Task<bool> DeleteLga(long lgaId);
-        Task<bool> UpdatLga(long lgaId);
-        Task<bool> AddLga(LgasDto lgaToBeAdded);
+        Task<bool> UpdatLga(UpdateLgaDto lgaToUpdate);
+        Task<LgasDto> AddLga(AddLgaDto lgaToBeAdded);
     }
 }

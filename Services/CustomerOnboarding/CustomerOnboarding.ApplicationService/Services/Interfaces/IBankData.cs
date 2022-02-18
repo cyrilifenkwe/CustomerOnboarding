@@ -7,7 +7,7 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
     public interface IBankData
     {
-        [Get("/")]
+        [Get("/GetAllBanks")]
         Task<IEnumerable<BankResponse>> Get();
     }
 }

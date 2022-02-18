@@ -24,19 +24,25 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
         }
 
 
-        public async Task<bool> AddLga(LgasDto lgaToBeAdded)
+        public async Task<LgasDto> AddLga(AddLgaDto lgaToBeAdded)
         {
             var existingState = await _stateRepository.GetByWhere(x => x.Name == lgaToBeAdded.State);
             var state = existingState.SingleOrDefault();
 
             if (state == null)
             {
-                throw new Exception($"Local gornment area {lgaToBeAdded.LGA} can not be created because state {lgaToBeAdded.State} was not found");
+                throw new Exception($"Local government area {lgaToBeAdded.LGA} can not be created because state {lgaToBeAdded.State} was not found");
             }
 
             var mappedLgaTobeAdded = new LocalGovernmentArea { Lga = lgaToBeAdded.LGA, StateId = state.Id };
             await _lgaRepository.CreateAsync(mappedLgaTobeAdded);
-            return true;
+
+            return new LgasDto
+            {
+                Id = mappedLgaTobeAdded.Id,
+                LGA = mappedLgaTobeAdded.Lga,
+                State = lgaToBeAdded.State
+            };
         }
 
         public async Task<bool> DeleteLga(long lgaId)
@@ -58,6 +64,11 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
         public async Task<LgasDto> GetLgaById(long lgaId)
         {
             var result = await _lgaRepository.GetByWhere(x => x.Id == lgaId);
+
+            if (result.SingleOrDefault() == null)
+            {
+                throw new Exception("Local government area with id {lgaId} was not found");
+            }
 
             return await MapLgaToLgaDto(result.SingleOrDefault());
         }
@@ -85,9 +96,9 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             return lgasDto.AsEnumerable();
         }
 
-        public async Task<bool> UpdatLga(long lgaId)
+        public async Task<bool> UpdatLga(UpdateLgaDto lgaToUpdated)
         {
-            var lga = await _lgaRepository.GetByWhere(x => x.Id == lgaId);
+            var lga = await _lgaRepository.GetByWhere(x => x.Id == lgaToUpdated.Id);
 
             var lgaTobeUpdated = lga.SingleOrDefault();
 
@@ -96,6 +107,9 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
                 throw new Exception("Local government area with id {} can not be updated because it was not found");
 
             }
+
+            lgaTobeUpdated.Lga = lgaToUpdated.LGA;
+
             await _lgaRepository.UpdateAsync(lgaTobeUpdated);
             return true;
         }
@@ -127,7 +141,7 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
 
             if (stateName.Name.ToLower() != "fct") { stateName.Name = stateName.Name + " State"; }
 
-            var lgaDto = new LgasDto { LGA = lga.Lga, State = stateName.Name };
+            var lgaDto = new LgasDto { Id = lga.Id, LGA = lga.Lga, State = stateName.Name };
 
             return lgaDto;
         }

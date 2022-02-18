@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CustomerOnboarding.ApplicationService.Dtos
 {
-    public class LgasDto
+    public class AddLgaDto
     {
-        public long Id { get; set; }
         public string LGA { get; set; }
         public string State { get; set; }
     }
