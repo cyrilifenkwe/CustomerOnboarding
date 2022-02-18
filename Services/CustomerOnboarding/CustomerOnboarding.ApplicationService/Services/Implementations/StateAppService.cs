@@ -17,32 +17,42 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
         {
             _stateRepository = stateRepository;
         }
-        public bool AddState(State stateToAdd)
+        public async Task<bool> AddState(State stateToAdd)
         {
-            _stateRepository.Insert(stateToAdd);
+            await _stateRepository.CreateAsync(stateToAdd);
             return true;
         }
 
-        public bool DeleteState(State stateToDelete)
+        public async Task<bool> DeleteState(State stateToDelete)
         {
-            _stateRepository.Delete(stateToDelete);
+            await _stateRepository.DeleteAsync(stateToDelete);
             return true;
         }
 
-        public State GetStateById(long stateId)
+        public async Task<IEnumerable<State>> GetAll()
         {
-            return _stateRepository.Get(stateId);
+            var result = await _stateRepository.GetAll();
+            return result.AsEnumerable();
         }
 
-        public State GetStateByName(string stateName)
+        public async Task<State> GetStateById(long stateId)
         {
-            return _stateRepository.GetAll().FirstOrDefault(x => x.Name == stateName);
+            var result =  await _stateRepository.GetByWhere(x => x.Id == stateId);
+            return result.SingleOrDefault();
         }
 
-        public bool UpdateState(State stateToUpdate)
+        public async Task<State> GetStateByName(string stateName)
         {
-            _stateRepository.Update(stateToUpdate);
+            var result = await _stateRepository
+                .GetByWhere(x => x.Name.ToLower() == stateName.ToLower());
+            return result.SingleOrDefault();
+        }
+
+        public async Task<bool> UpdateState(State stateToUpdate)
+        {
+            await _stateRepository.UpdateAsync(stateToUpdate);
             return true;
         }
+
     }
 }

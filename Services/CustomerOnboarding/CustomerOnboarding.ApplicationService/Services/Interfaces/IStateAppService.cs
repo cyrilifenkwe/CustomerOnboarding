@@ -9,10 +9,11 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
     public interface IStateAppService
     {
-        State GetStateById(long stateId);
-        State GetStateByName(string stateName);
-        bool UpdateState(State stateToUpdate);
-        bool DeleteState(State stateToDelete);
-        bool AddState(State stateToAdd);
+        Task<IEnumerable<State>> GetAll();
+        Task<State> GetStateById(long stateId);
+        Task<State> GetStateByName(string stateName);
+        Task<bool> UpdateState(State stateToUpdate);
+        Task<bool> DeleteState(State stateToDelete);
+        Task<bool> AddState(State stateToAdd);
     }
 }

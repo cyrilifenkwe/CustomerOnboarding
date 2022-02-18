@@ -9,10 +9,10 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
     public interface IOnboardingStatusAppService
     {
-        OnboardingStatus GetOnboardingStatusById(long OnboardingStatusId);
-        OnboardingStatus GetOnboardingStatusByDescription(string OnboardingStatusDescription);
-        bool UpdateOnboardingStatus(OnboardingStatus OnboardingStatusToUpdate);
-        bool DeleteOnboardingStatus(OnboardingStatus OnboardingStatusToDelete);
-        bool AddOnboardingStatus(OnboardingStatus OnboardingStatusToAdd);
+        Task<OnboardingStatus> GetOnboardingStatusById(long OnboardingStatusId);
+        Task<OnboardingStatus> GetOnboardingStatusByDescription(string OnboardingStatusDescription);
+        Task<bool> UpdateOnboardingStatus(OnboardingStatus OnboardingStatusToUpdate);
+        Task<bool> DeleteOnboardingStatus(OnboardingStatus OnboardingStatusToDelete);
+        Task<bool> AddOnboardingStatus(OnboardingStatus OnboardingStatusToAdd);
     }
 }
