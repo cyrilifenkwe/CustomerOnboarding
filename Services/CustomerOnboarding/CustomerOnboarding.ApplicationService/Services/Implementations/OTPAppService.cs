@@ -10,7 +10,7 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
 {
     public class OTPAppService : IOtpService
     {
-        public bool SendOTP(string phoneNumber)
+        public async Task<bool> SendOTP(string phoneNumber)
         {
             var otpSent = true;
             if (otpSent == false)
@@ -20,7 +20,7 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             return otpSent;
         }
 
-        public bool VerifiedOTP(string phoneNumber)
+        public async Task<bool> VerifiedOTP(string phoneNumber)
         {
             var otpVerified = true;
             if (otpVerified == false)

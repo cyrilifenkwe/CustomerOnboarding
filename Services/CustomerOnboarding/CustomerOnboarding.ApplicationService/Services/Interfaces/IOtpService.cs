@@ -8,7 +8,7 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
     public interface IOtpService
     {
-        bool SendOTP(string phoneNumber);
-        bool VerifiedOTP(string phoneNumber);
+        Task<bool> SendOTP(string phoneNumber);
+        Task<bool> VerifiedOTP(string phoneNumber);
     }
 }

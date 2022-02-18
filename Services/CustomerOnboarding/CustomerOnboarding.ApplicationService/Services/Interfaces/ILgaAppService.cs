@@ -1,4 +1,5 @@
-﻿using CustomerOnboarding.Core.Entities;
+﻿using CustomerOnboarding.ApplicationService.Dtos;
+using CustomerOnboarding.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
     public interface ILgaAppService
     {
-        LocalGovernmentArea GetLgaById(long lgaId);
-        IEnumerable<LocalGovernmentArea> GetStateId(long stateId);
-        bool DeleteLga(LocalGovernmentArea lgaToBeDeleted);
-        bool UpdatLga(LocalGovernmentArea lgaToBeUpdated);
-        bool AddLga(LocalGovernmentArea lgaToBeAdded);
+        Task<LgasDto> GetLgaById(long lgaId);
+        Task<IEnumerable<LgasDto>> GetByStateId(long stateId);
+        Task<LgasDto> GetLgaByLgaName(string lgaName);
+        Task<IEnumerable<LgasDto>> GetAllLgas();
+        Task<bool> DeleteLga(long lgaId);
+        Task<bool> UpdatLga(long lgaId);
+        Task<bool> AddLga(LgasDto lgaToBeAdded);
     }
 }

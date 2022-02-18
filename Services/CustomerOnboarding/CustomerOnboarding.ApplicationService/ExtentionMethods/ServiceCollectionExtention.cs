@@ -1,9 +1,12 @@
 ﻿using CustomerOnboarding.ApplicationService.Services.Implementations;
 using CustomerOnboarding.ApplicationService.Services.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +15,7 @@ namespace CustomerOnboarding.ApplicationService.ExtentionMethods
     public static class ServiceCollectionExtention
     {
         public static IServiceCollection AddCustomerOnboardingApplicationService(
-            this IServiceCollection services)
+            this IServiceCollection services,IConfiguration config)
         {
             services.AddTransient<ICustomerOnboarder,OnboardCustomerAppService>();
             services.AddTransient<IOtpService,OTPAppService>();
@@ -21,6 +24,16 @@ namespace CustomerOnboarding.ApplicationService.ExtentionMethods
             services.AddTransient<ILgaAppService, LgaAppService>();
             services.AddTransient<IOnboardingStatusAppService, OnboardingStatusAppService>();
             services.AddTransient<IBankAppService, BankAppService>();
+
+            services.AddRefitClient<IBankData>()
+            .ConfigureHttpClient(c =>
+            {
+                c.BaseAddress = new Uri(config["ALAT_Tech_Test_API:Url"]);
+                c.DefaultRequestHeaders.Authorization = 
+                        new AuthenticationHeaderValue("Subscription key", 
+                                        config["ALAT_Tech_Test_API:Subscription_Key"]);
+            });
+
             return services;
         }
     }

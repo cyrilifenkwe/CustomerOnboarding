@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomerOnboarding.ApplicationService.Validators
+namespace CustomerOnboarding.Api.Validators
 {
     public class CustomerDtoValidator : AbstractValidator<CustomerDto>
     {
@@ -23,7 +23,7 @@ namespace CustomerOnboarding.ApplicationService.Validators
                 .NotEmpty().WithMessage("Password can not be left empty")
                 .NotNull().WithMessage("Password provided is invalid")
                 .MinimumLength(8).WithMessage("Password should not be less than 8 characters")
-                .Matches("^[a-zA-Z0-9]*$").WithMessage("Password should contain alphanumeric characters");
+                .Matches("^[a-zA-Z0-9@!]*$").WithMessage("Password should contain alphanumeric characters");
 
             RuleFor(c => c.StateOfResidence)
                 .NotEmpty().WithMessage("State of residence can not be left empty")

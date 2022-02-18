@@ -1,4 +1,5 @@
 ﻿using CustomerOnboarding.ApplicationService.Dtos;
+using CustomerOnboarding.ApplicationService.Exceptions;
 using CustomerOnboarding.ApplicationService.Services.Exceptions;
 using CustomerOnboarding.ApplicationService.Services.Interfaces;
 using CustomerOnboarding.Core.Entities;
@@ -34,59 +35,70 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             _stateRepository = stateRepository;
             _passwordHasher = passwordHasher;
         }
-        public bool OnboardCustomer(CustomerDto customer) 
+        public async Task<bool> OnboardCustomer(CustomerDto customer) 
         {
-            var otpSent = _otpService.SendOTP(customer.PhoneNumber);
-            var otpVerified = _otpService.VerifiedOTP(customer.PhoneNumber);
+            var previouslyOnboardedCustomerWithSameEmail = await _customerRepository
+                .GetByWhere(x => x.Email == customer.Email);
+            
+            var existingCustomer = previouslyOnboardedCustomerWithSameEmail.SingleOrDefault();
 
-            var stateId = _stateRepository.GetAll()
-                .FirstOrDefault(s => s.Name == 
-                customer.StateOfResidence).Id;
-
-            var lgaMappedToState = _lgaRepository.GetAll().Where(x => x.Lga == 
-                            customer.LGA && x.StateId == stateId).Any();
-
-            if (otpSent && otpVerified && lgaMappedToState)
+            if (existingCustomer != null)
             {
-                var newCustomer = new Customer 
-                {
-                    PhoneNumber = customer.PhoneNumber,
-                    DateOnboarded = DateTime.Now,
-                    Email = customer.Email,
-                    OnboardingStatusId = GetOnboardingStatusId("Completed"),
-                    Password = _passwordHasher.HashPassword(customer.Password)
-                };
-                _customerRepository.Insert(newCustomer);
-                return true;
+                throw new OnboardCustomerException($"Customer with email {customer.Email} has already been onboarded");
             }
-            else
+
+            var otpIsSent = await _otpService.SendOTP(customer.PhoneNumber);
+            var otpIsVerified = await _otpService.VerifiedOTP(customer.PhoneNumber);
+
+            var getStateByNameResult = await _stateRepository
+                .GetByWhere(x => x.Name == customer.StateOfResidence);
+
+            var getStateByName = getStateByNameResult.SingleOrDefault();
+
+            if (getStateByName == null)
+            {
+                throw new StateNotFoundException($"Error onboarding customer as state with name {customer.StateOfResidence} was not found");
+            }
+
+            long stateId = getStateByName.Id;
+
+            var lgasMappedToState = await _lgaRepository
+                .GetByWhere(x => x.StateId == stateId && x.Lga == customer.LGA);
+
+            var lgaIsMappedToState = lgasMappedToState.Any();
+
+            if (otpIsSent && otpIsVerified && lgaIsMappedToState)
             {
                 var newCustomer = new Customer
                 {
                     PhoneNumber = customer.PhoneNumber,
                     DateOnboarded = DateTime.Now,
                     Email = customer.Email,
-                    OnboardingStatusId = GetOnboardingStatusId("Pending"),
+                    OnboardingStatusId = await GetOnboardingStatusId("Completed"),
                     Password = _passwordHasher.HashPassword(customer.Password)
                 };
-                _customerRepository.Insert(newCustomer);
-                return false;
-            }
+                await _customerRepository.CreateAsync(newCustomer);
+                return true;
+             }
+
+            throw new OnboardCustomerException($"Local government area ({customer.LGA}) which was provided " +
+                $"can not be mapped to the state of residence ({customer.StateOfResidence})");
         }
 
-        public IEnumerable<Customer> GetAllOnboardedCustomers()
+        public async Task<IEnumerable<Customer>> GetAllOnboardedCustomers()
         {
-            var onboardingStatusId = GetOnboardingStatusId("Completed");
-            var allOnboardedCustomers = _customerRepository.GetAll()
-                    .Where(x => x.OnboardingStatusId == onboardingStatusId);
+            var completedOnboardedStatusId = await GetOnboardingStatusId("Completed");
+
+            var allOnboardedCustomers = await _customerRepository
+                .GetByWhere(x => x.OnboardingStatusId == completedOnboardedStatusId);
 
             return allOnboardedCustomers;
         }
-        private long GetOnboardingStatusId(string statusDescription)
+        private async Task<long> GetOnboardingStatusId(string statusDescription)
         {
             long newOnboardingStatusId = 0;
             long pendingOnboardingStatusId = 0;
-            var allOnboardingStatus = _OnboardingStatusRepository.GetAll();
+            var allOnboardingStatus = await _OnboardingStatusRepository.GetAll();
 
             foreach (var status in allOnboardingStatus)
             {
@@ -103,33 +115,44 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
             return newOnboardingStatusId == 0 ? pendingOnboardingStatusId : newOnboardingStatusId;
         }
 
-        public Customer GetOnboardedCustomerById(long customerId)
+        public async Task<Customer> GetOnboardedCustomerById(long customerId)
         {
-            return _customerRepository.Get(customerId);
+            var completedOnboardedStatusId = await GetOnboardingStatusId("Completed");
+
+            var onboardedCustomer = await _customerRepository
+                        .GetByWhere(x => x.Id == customerId &&
+                        x.OnboardingStatusId == completedOnboardedStatusId);
+
+            return onboardedCustomer.SingleOrDefault();
         }
 
-        public bool UpdateOnboardedCustomer(Customer customerToUpdate)
+        public async Task<bool> UpdateOnboardedCustomer(Customer customerToUpdate)
         {
-            _customerRepository.Update(customerToUpdate);
+            await _customerRepository.UpdateAsync(customerToUpdate);
             return true;
         }
 
-        public bool DeleteOnboardedCustomer(Customer customerToDelete)
+        public async Task<bool> DeleteOnboardedCustomer(Customer customerToDelete)
         {
-            _customerRepository.Update(customerToDelete);
+            await _customerRepository.DeleteAsync(customerToDelete);
             return true;
         }
 
-        public Customer GetOnboardedCustomerByEmail(string customerEmail)
+        public async Task<Customer> GetOnboardedCustomerByEmail(string customerEmail)
         {
-           return  _customerRepository.GetAll()
-                .FirstOrDefault(x => x.Email == customerEmail);
+           var customerByEmail =  await _customerRepository
+                .GetByWhere(x => x.Email.ToLower() == customerEmail.ToLower());
+
+           return customerByEmail.SingleOrDefault();
         }
 
-        public Customer GetOnboardedCustomerByPhoneNumber(string customerPhoneNumber)
+        public async Task<Customer> GetOnboardedCustomerByPhoneNumber(string customerPhoneNumber)
         {
-            return _customerRepository.GetAll()
-                .FirstOrDefault(x => x.PhoneNumber == customerPhoneNumber);
+            var customerByPhoneNumber = await _customerRepository
+                .GetByWhere(x => x.PhoneNumber.ToLower() == customerPhoneNumber.ToLower());
+
+            return customerByPhoneNumber.SingleOrDefault();
         }
+
     }
 }

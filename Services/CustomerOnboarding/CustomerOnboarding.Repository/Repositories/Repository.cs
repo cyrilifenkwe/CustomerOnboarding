@@ -5,51 +5,45 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace CustomerOnboarding.Repositories.Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
         private readonly CustomerOnboardingContext context;
-        private readonly DbSet<T> entities;
         public Repository(CustomerOnboardingContext context)
         {
             this.context = context;
-            entities = context.Set<T>();
         }
-        public IEnumerable<T> GetAll()
+        public async Task CreateAsync(T entity)
         {
-            return entities.AsEnumerable();
+            await context.Set<T>().AddAsync(entity);
+            await context.SaveChangesAsync();
         }
-        public T Get(long id)
+
+        public async Task DeleteAsync(T entity)
         {
-            return entities.SingleOrDefault(s => s.Id == id);
+            context.Set<T>().Remove(entity);
+            await context.SaveChangesAsync();
         }
-        public void Insert(T entity)
+
+        public async Task<IQueryable<T>> GetAll()
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity));
-            }
-            entities.Add(entity);
-            context.SaveChanges();
+            return context.Set<T>().AsNoTracking();
         }
-        public void Update(T entity)
+
+        public async Task<IQueryable<T>> GetByWhere(Expression<Func<T, bool>> predicate)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity));
-            }
-            context.SaveChanges();
+            return context.Set<T>().Where(predicate).AsNoTracking();
         }
-        public void Delete(T entity)
+
+        public async Task UpdateAsync(T entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity));
-            }
-            entities.Remove(entity);
-            context.SaveChanges();
+            context.Update(entity);
+            await context.SaveChangesAsync();
         }
+
     }
 }

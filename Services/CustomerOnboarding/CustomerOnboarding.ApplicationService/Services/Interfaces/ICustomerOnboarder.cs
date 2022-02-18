@@ -10,13 +10,13 @@ namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
     public interface ICustomerOnboarder
     {
-        bool OnboardCustomer(CustomerDto customer);
-        IEnumerable<Customer> GetAllOnboardedCustomers();
+        Task<bool> OnboardCustomer(CustomerDto customer);
+        Task<IEnumerable<Customer>> GetAllOnboardedCustomers();
 
-        Customer GetOnboardedCustomerById(long customerId);
-        bool UpdateOnboardedCustomer(Customer customerToUpdate);
-        bool DeleteOnboardedCustomer(Customer customerToDelet);
-        Customer GetOnboardedCustomerByEmail(string customerEmail);
-        Customer GetOnboardedCustomerByPhoneNumber(string customerPhoneNumber);
+        Task<Customer> GetOnboardedCustomerById(long customerId);
+        Task<bool> UpdateOnboardedCustomer(Customer customerToUpdate);
+        Task<bool> DeleteOnboardedCustomer(Customer customerToDelet);
+        Task<Customer> GetOnboardedCustomerByEmail(string customerEmail);
+        Task<Customer> GetOnboardedCustomerByPhoneNumber(string customerPhoneNumber);
     }
 }

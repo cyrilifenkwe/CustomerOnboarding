@@ -1,4 +1,5 @@
 using CsvHelper;
+using CustomerOnboarding.Api.Filters;
 using CustomerOnboarding.Api.Mappers;
 using CustomerOnboarding.ApplicationService.ExtentionMethods;
 using CustomerOnboarding.Core.Dto;
@@ -8,20 +9,15 @@ using CustomerOnboarding.Repository.ExtentionMethods;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CustomerOnboarding.Api
 {
@@ -66,9 +62,15 @@ namespace CustomerOnboarding.Api
                 lgaRecords = csv.GetRecords<LgaDto>().OrderBy(x => x.Lga).ToList();
             }
 
+            
             services.AddAutoMapper(typeof(Startup));
-            services.AddFluentValidation();
-            services.AddCustomerOnboardingApplicationService();
+            services.AddMvc(opt => 
+            { 
+                opt.EnableEndpointRouting = false;
+                opt.Filters.Add<ValidationFilter>();
+            }).AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+            services.AddCustomerOnboardingApplicationService(Configuration);
             services.AddCustomerOnboardingRepositoryServices(Configuration);
         }
 

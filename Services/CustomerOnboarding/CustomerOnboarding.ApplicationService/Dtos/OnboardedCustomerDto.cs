@@ -10,7 +10,6 @@ namespace CustomerOnboarding.ApplicationService.Dtos
     {
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public string Password { get; set; }
         public long OnboardingStatusId { get; set; }
         public DateTime DateOnboarded { get; set; }
     }

@@ -17,32 +17,35 @@ namespace CustomerOnboarding.ApplicationService.Services.Implementations
         {
             _onboardingStatusRepository = onboardingStatusRepository;
         }
-        public bool AddOnboardingStatus(OnboardingStatus onboardingStatusToAdd)
+        public async Task<bool> AddOnboardingStatus(OnboardingStatus onboardingStatusToAdd)
         {
-            _onboardingStatusRepository.Insert(onboardingStatusToAdd);
+            await _onboardingStatusRepository.CreateAsync(onboardingStatusToAdd);
             return true;
         }
 
-        public bool DeleteOnboardingStatus(OnboardingStatus onboardingStatusToDelete)
+        public async Task<bool> DeleteOnboardingStatus(OnboardingStatus onboardingStatusToDelete)
         {
-            _onboardingStatusRepository.Delete(onboardingStatusToDelete);
+            await _onboardingStatusRepository.DeleteAsync(onboardingStatusToDelete);
             return true;
         }
 
-        public OnboardingStatus GetOnboardingStatusByDescription(string OnboardingStatusDescription)
+        public async Task<OnboardingStatus> GetOnboardingStatusByDescription(string OnboardingStatusDescription)
         {
-            return _onboardingStatusRepository.GetAll()
-                .SingleOrDefault(x => x.Description == OnboardingStatusDescription);
+            var result = await _onboardingStatusRepository
+                .GetByWhere(x => x.Description.ToLower() == OnboardingStatusDescription.ToLower());
+            return result.SingleOrDefault();
         }
 
-        public OnboardingStatus GetOnboardingStatusById(long OnboardingStatusId)
+        public async Task<OnboardingStatus> GetOnboardingStatusById(long OnboardingStatusId)
         {
-            return _onboardingStatusRepository.Get(OnboardingStatusId);
+            var result = await _onboardingStatusRepository
+                .GetByWhere(x => x.Id == OnboardingStatusId);
+            return result.SingleOrDefault();
         }
 
-        public bool UpdateOnboardingStatus(OnboardingStatus onboardingStatusToUpdate)
+        public async Task<bool> UpdateOnboardingStatus(OnboardingStatus onboardingStatusToUpdate)
         {
-            _onboardingStatusRepository.Update(onboardingStatusToUpdate);
+            await _onboardingStatusRepository.UpdateAsync(onboardingStatusToUpdate);
             return true;
         }
     }

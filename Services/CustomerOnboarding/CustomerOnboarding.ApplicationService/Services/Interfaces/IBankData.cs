@@ -1,11 +1,13 @@
 ﻿using CustomerOnboarding.Core.Dto;
+using Refit;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CustomerOnboarding.ApplicationService.Services.Interfaces
 {
-    public interface IBankAppService
+    public interface IBankData
     {
-        Task<IEnumerable<BankResponse>> GetBanks();
+        [Get("/")]
+        Task<IEnumerable<BankResponse>> Get();
     }
 }
